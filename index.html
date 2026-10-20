@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings tracking app (student crud)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <h2 class="bg-dark text-white text-center text-capitalize p-3">Track Your Savings, Watch Your Wealth Grow.</h2>
+    <div class="container-fluid">
+        <div class="row mt-4">
+            <div class="col-md-3 mb-5">
+                <div class="card">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h2>Saving Details</h2>
+                    </div>
+                    <form id="expenseForm"> 
+                        <div class="card-body">
+
+                            <div class="form-group">
+                                <label for="goal">Goal Name</label>
+                                <input required  type="text" id="goal" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="targetAmount">Target Amount (&#8377;)</label>
+                                <input required type="number"  id="targetAmount" class="form-control ">
+                            </div>
+                            <div class="form-group">
+                                <label for="saved">Saved (&#8377;)</label>
+                                <input required  type="number" id="saved" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Target Date</label>
+                                <input  type="date" id="date" class="form-control text-primary">
+                            </div>
+                            <div class="form-group">
+                                <label for="note">Note</label>
+                                <input required  type="text" id="note" class="form-control">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm btn-block btn-dark" id="addBtn">Add Saving</button>
+                            <button type="button" class="btn btn-sm btn-block btn-primary d-none" id="updateBtn">Update
+                                Saving</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-9">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Goal Name</th>
+                                <th>Target Amount (&#8377;)</th>
+                                <th>Saving (&#8377;)</th>
+                                <th>How Saved?</th>
+                                <th>Target Date</th>
+                                <th class="text-center">Edit</th>
+                                <th class="text-center">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white text-black font-weight-bold" id="savingsContainer">
+                            <!-- <tr>
+                                <td>1</td>
+                                <td class="text-primary h5"><b>Macbook Pro</b></td>
+                                <td>&#8377; 200000</td>
+                                <td>&#8377; 40000</td>
+                                <td>Saved in Big Billion days...</td>
+                                <td>01/01/2026</td>
+                                <td class="text-center"><button onclick="onEdit(this)" class="btn btn-sm btn-outline-primary">Edit</button></td>
+                                <td class="text-center"><button onclick="onDelete(this)" class="btn btn-sm btn-outline-danger">Delete</button></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="spinner" class="d-none">
+        <button class="btn btn-primary" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
